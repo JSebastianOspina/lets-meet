@@ -1,6 +1,62 @@
-import { QuestionCategoryEnum } from "../../enums/enums";
+import { CategoryContent, QuestionCategoryEnum } from "../../enums/types";
 
-export const allQuestions: { [key in QuestionCategoryEnum]: { questions: string[], actions: string[] } } = {
+export const allQuestions: { [key in QuestionCategoryEnum]: CategoryContent } = {
+    [QuestionCategoryEnum.Perception]: {
+        actions: [
+            "Responde la próxima pregunta con un acento diferente (los dos).",
+            "Dibujen un retrato del otro en un minuto. Luego intercámbienlo.",
+            "Cierra los ojos. ¿De qué color es mi camisa?",
+            "Cierra los ojos. ¿De qué color son mis ojos?",
+            "Mírame a los ojos por 30 segundos. ¿Qué notaste?",
+            "Piensa en tu cereal favorito. ¡A la cuenta de tres, díganlo en voz alta!",
+            "Dibujen algo juntos en 30 segundos.",
+            "Califica cómo bailas del 1 al 10. ¡A la cuenta de tres, digan su número!",
+            "Escribe algo sobre ti que nadie adivinaría con solo mirarte. Comparen.",
+            "Haz una suposición sobre mí.",
+            "Piensa en tu programa de tele favorito de la infancia. ¡Dilo a la cuenta de tres!"
+        ],
+        questions: [
+            "Recuerda: no te obsesiones con el resultado.",
+            "¿Qué crees que es lo más raro o diferente de mí?",
+            "¿Qué crees que es lo más difícil de mi trabajo?",
+            "¿En qué crees que gastaría más dinero?",
+            "¿Crees que soy puntual, siempre llego tarde o llego antes de tiempo? ¿Por qué?",
+            "¿Qué crees que mi Instagram dice de mí?",
+            "¿Te recuerdo a alguien? ¿A quién?",
+            "¿Qué reality show crees que me obsesionaría? ¿Por qué?",
+            "Completa la frase: Al verte, pensaría que...",
+            "¿Cuál crees que es mi canción favorita para karaoke?",
+            "¿Qué crees que mi fondo de pantalla del celular dice de mí?",
+            "¿Te parezco amable? ¿Por qué?",
+            "¿Crees que iría de campamento? ¿Cómo crees que lo prepararía?",
+            "¿Cuántas multas por exceso de velocidad crees que he tenido?",
+            "¿Pareces alguien que se tatuaría el nombre de alguien? ¿Por qué sí o no?",
+            "¿Qué pensaste de mí la primera vez que me viste?",
+            "¿Crees que soy más de café o de té? ¿Y cómo lo tomo?",
+            "De pequeño, ¿qué crees que quería ser?",
+            "Si MySpace aún existiera, ¿qué canción pondría en mi perfil?",
+            "¿Qué dice mi lenguaje corporal ahora?",
+            "¿Soy más de gatos o de perros? ¿Por qué?",
+            "¿Qué papel crees que interpretaría en una película?",
+            "Si tuvieras que regalarme algo sin conocerme, solo por mi apariencia, ¿qué sería?",
+            "¿Qué materia crees que se me daba mejor en la escuela? ¿Y cuál crees que reprobé?",
+            "¿Qué dicen mis zapatos sobre mí?",
+            "¿Crees que soy más de madrugar o de trasnochar? ¿Por qué?",
+            "En una escala del 1 al 10, ¿qué tan desordenado crees que está mi cuarto o mi coche? Explica.",
+            "¿Crees que era popular en la escuela? ¿Por qué?",
+            "¿Crees que me enamoro rápido? ¿Por qué sí o no?",
+            "¿Crees que alguna vez revisé el celular de un ex? ¿Por qué?",
+            "¿Qué fue lo primero que notaste de mí?",
+            "¿Quién crees que es mi famoso crush?",
+            "¿Qué es lo que más te llama la atención de mí?",
+            "¿En qué lugar de comida rápida crees que pediría algo? ¿Y qué pediría?",
+            "¿Crees que doy miedo o intimido a los demás? ¿Por qué sí o no?",
+            "¿Crees que se me mueren las plantas o que las cuido bien? ¿Por qué?",
+            "¿Crees que soy más creativo o lógico? Explica."
+        ],
+        finalActions: ["Escribe un mensaje para mí y yo haré lo mismo. Intercambiamos y los abrimos después de despedirnos.",
+        ]
+    },
     [QuestionCategoryEnum.Connection]: {
         questions: [
             "Recuerda: es mejor estar interesado en entender a los demás que en ser entendido.",
@@ -127,7 +183,13 @@ export const allQuestions: { [key in QuestionCategoryEnum]: { questions: string[
             "¿Cuál es el mayor acto de amabilidad que has presenciado?",
             "¿Cómo describirías el significado de la libertad para ti?",
             "¿Qué te ayuda a reconectarte con tus objetivos cuando los pierdes de vista?",
-            "¿Qué legado te gustaría dejar en el mundo?"
+            "¿Qué legado te gustaría dejar en el mundo?",
+            "¿Qué es algo que siempre has querido aprender pero nunca lo has intentado?",
+            "¿Cuál es tu mayor fortaleza, según los que te rodean?",
+            "Si pudieras elegir un sueño loco para los próximos cinco años, ¿cuál sería?",
+            "¿Qué crees que es lo que más te diferencia de los demás?",
+            "¿Cómo te gustaría que se recordara esta etapa de tu vida?",
+            "Si pudieras hacer algo completamente diferente en tu vida, ¿qué harías?",
         ],
         actions: [
             "¡Presiona aleatorio en tu biblioteca musical y explica la primera canción que salga!",
@@ -158,16 +220,80 @@ export const allQuestions: { [key in QuestionCategoryEnum]: { questions: string[
             "Piensa en una habilidad que tienes pero que pocas personas conocen. Cuéntasela a tu compañero.",
             "Ambos jugadores dibujen cómo creen que se verán a los 80 años. Luego compárenlo.",
             "Ambos jugadores deben hacer una mueca graciosa y mantenerla durante 10 segundos. ¡El primero en reír pierde!",
-            "Describe el olor que más te gusta y por qué te hace sentir bien."
+            "Describe el olor que más te gusta y por qué te hace sentir bien.",
+
         ]
     },
-    [QuestionCategoryEnum.Perception]: {
-        actions: [],
-        questions: []
-    },
     [QuestionCategoryEnum.Reflection]: {
-        actions: [],
-        questions: []
-    }
+        actions: [
+            "Reta a tu compañero/a a hacer algo fuera de su zona de confort en la próxima semana. (Ambos jugadores)",
+            "¡Pónganse apodos!",
+            "Admite algo.",
+            "Dale un abrazo a tu compañero/a. No uno cualquiera, ¡un abrazo calientito y abrazador!",
+            "Escriban una carta a su yo más joven. (1 minuto) Opción de compartirla.",
+            "Revisen las fotos de Instagram del otro. Elijan la que más les represente y comenten por qué la eligieron.",
+            "Escribe algo que quieras dejar ir este año. Léelo en voz alta y luego rasguenlo juntos. (Ambos jugadores)",
+            "Crea tu propia pregunta. ¡Haz que valga!",
+            "Escribe una meta para este año. Dóblenla y cámbienla. ¡Ayúdense a cumplirla! (Ambos jugadores)",
+            "Jueguen una ronda de piedra, papel o tijera. El que gane puede hacerle cualquier pregunta al otro. El que pierda debe responder.",
+            "Compartan una canción que crean que al otro le gustaría. (Ambos jugadores)",
+            "Dale un cumplido a tu compañero/a que sientas que no le dicen lo suficiente.",
+            "Tómense una selfie juntos.",
+            "Escribe una canción sobre tu compañero/a. (30 segundos) Luego cántala en voz alta, ¡anímate! (Ambos jugadores)",
+            "Ambos comparten algo por lo que están más agradecidos en este momento."
+        ],
+        questions: [
+            "¿Qué respuesta mía te hizo sonreír?",
+            "¿Qué lección te llevas de nuestra conversación?",
+            "¿De qué soy el más indicado para dar consejos?",
+            "¿Qué es lo más difícil de entender de mí?",
+            "¿Qué crees que es mi característica más destacada?",
+            "¿Qué piensas que es mi debilidad?",
+            "En una palabra, ¿cómo describirías nuestra charla?",
+            "¿Qué superpoder crees que tengo?",
+            "Con lo que aprendiste de mí, ¿qué libro me recomendarías leer?",
+            "¿Cómo crees que nuestras personalidades se complementan?",
+            "¿Qué podemos crear juntos?",
+            "Con lo que sabes de mí, ¿tienes alguna recomendación de Netflix?",
+            "¿Qué es lo que más admiras de mí?",
+            "¿Qué crees que debería saber sobre mí que quizás no me he dado cuenta?",
+            "¿Por qué crees que nos conocimos?",
+            "¿Qué necesitas escuchar ahora mismo?",
+            "¿Qué te ha enseñado esta conversación sobre ti mismo/a?",
+            "¿He ganado tu confianza? ¿Cómo puedo ganarme más?",
+            "¿Qué crees que es lo que más miedo me da?",
+            "Cuando termine este juego, ¿qué recordarás de mí?",
+            "¿En qué momento del juego te sentiste más conectado/a conmigo?",
+            "¿Cómo me describirías a un extraño?",
+            "¿Qué me recomendarías dejar ir, si es que hay algo?",
+            "Si pudieras recetarme algo para hacer todo este mes, ¿qué sería y por qué?",
+            "En una palabra, ¿cómo te sientes ahora?",
+            "¿Qué fue lo que más te sorprendió de mí?",
+            "¿Crees que todos tienen un propósito en la vida? Si es así, ¿crees que yo ya he encontrado el mío?",
+            "Con lo que has aprendido sobre mí, ¿crees que mis redes sociales me reflejan bien? ¿Por qué sí o por qué no?",
+            "¿Qué crees que tenemos más en común?",
+            "¿Qué pregunta te dio más miedo responder?",
+            "¿Qué partes de ti ves en mí?",
+            "¿Qué momento de nuestra conversación te hizo sentir más escuchado/a?",
+            "¿Qué comentario mío te hizo pensar más sobre ti mismo/a?",
+            "¿Cuándo sentiste que realmente entendí lo que tratabas de decirme?",
+            "¿Qué parte de nuestra charla te hizo sentir más vivo/a o presente?",
+            "¿Cuál fue la parte más divertida de esta conversación?",
+            "Si pudieras volver a esta charla dentro de un año, ¿qué aspecto de ti esperas que haya cambiado?",
+            "Si tuviéramos que superar un reto juntos, ¿cómo crees que lo haríamos?",
+            "¿Qué te hace sentir más cómodo/a conmigo?",
+            "¿Cuál sería la forma más fácil de acercarnos más?",
+            "¿Qué aspecto de nuestra relación te gustaría fortalecer?",
+            "¿Qué crees que la gente más valora de ti?",
+            "Si te pidieran describir tu personalidad en tres palabras, ¿cuáles serían?",
+            "¿Qué cualidades en los demás te atraen más?",
+            "Si tuviera que darte un superpoder, ¿cuál crees que sería?",
+            "¿Cómo crees que la gente te ve a primera vista?",
+            "¿Qué harías si pudieras cambiar una cosa de cómo te perciben los demás?",
+            "¿Qué valoras más en las personas que te rodean?",
+            "¿Qué consejo te darías a ti mismo/a si tuvieras que tomar una decisión importante hoy?",
+            "¿Qué crees que sería necesario para que estemos más en contacto el próximo año?"
+        ]
+    },
 
 }

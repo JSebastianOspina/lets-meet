@@ -9,10 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#121212",
-        connection: '#f44250',
-        perception: '#3992ff',
-        reflection: '#ffffff',
+        background: "#fdf0d5",
+        connection: '#780000',
+        perception: '#114B5F',
+        reflection: '#003049',
       },
     },
   },
