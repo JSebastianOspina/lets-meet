@@ -85,7 +85,7 @@ export const PlayScreen = () => {
         action={() => getNextQuestion()}
         extraClasses={`mb-8 ${getBackgroudColor(
           category
-        )}  text-background border-none`}
+        )}  text-background border-none w-full md:w-1/2`}
       />
       <div className="flex flex-col  md:flex-row-reverse gap-2.5 md:gap-12 w-full justify-center">
         <Button
