@@ -4,18 +4,13 @@ import { QuestionCategoryEnum } from "../../domain/enums/types";
 import { allQuestions } from "../../domain/data/questions/es";
 import { categoryOrder } from "../../domain/data/categories/order";
 import { Button } from "./button";
-import { getCategoryDisplayName } from "../../domain/utils";
+import {
+  getBackgroudColor,
+  getCategoryDescription,
+  getCategoryDisplayName,
+  getTextColor,
+} from "../../domain/utils";
 
-const getTextColor = (category: QuestionCategoryEnum) => {
-  switch (category) {
-    case QuestionCategoryEnum.Connection:
-      return "text-connection";
-    case QuestionCategoryEnum.Perception:
-      return "text-perception";
-    case QuestionCategoryEnum.Reflection:
-      return "text-reflection";
-  }
-};
 const getCategoryQuestions = (category: QuestionCategoryEnum) => {
   return allQuestions[category].questions;
 };
@@ -69,12 +64,18 @@ export const PlayScreen = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center bg-background px-5 py-10 md:py-20 text-center">
-      <h2 className={`text-3xl font-black ${textColor}`}>
-        {getCategoryDisplayName(category)}
-      </h2>
+    <div className="w-full h-full flex flex-col justify-center items-center bg-background px-5 py-10 md:py-14 text-center">
+      <div className="w-full md:w-1/2">
+        <h2 className={`text-3xl font-black ${textColor} mb-2`}>
+          {getCategoryDisplayName(category)}
+        </h2>
+        <h3 className={`text-sm font-light ${textColor} text-center`}>
+          {getCategoryDescription(category)}
+        </h3>
+      </div>
+
       <div className="flex-1 flex items-center justify-center ">
-        <h2 className={`text-3xl font-black ${textColor}`}>
+        <h2 className={`text-2xl md:text-3xl font-black ${textColor}`}>
           {currentQuestion}
         </h2>
       </div>
@@ -82,9 +83,11 @@ export const PlayScreen = () => {
       <Button
         text="Siguiente pregunta"
         action={() => getNextQuestion()}
-        extraClasses={`mb-8 bg-${category}  text-background border-none`}
+        extraClasses={`mb-8 ${getBackgroudColor(
+          category
+        )}  text-background border-none`}
       />
-      <div className="flex flex-col md:flex-row gap-2.5 md:gap-12 w-full justify-center">
+      <div className="flex flex-col  md:flex-row-reverse gap-2.5 md:gap-12 w-full justify-center">
         <Button
           text="Categoría siguiente"
           action={() => handleCategoryChange("next")}
