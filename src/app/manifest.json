@@ -1,8 +1,8 @@
 {
     "name": "Let's Meet",
     "short_name": "Let's Meet",
-    "theme_color": "#f3213a",
-    "background_color": "#161617",
+    "theme_color": "#fdf0d5",
+    "background_color": "#fdf0d5",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
