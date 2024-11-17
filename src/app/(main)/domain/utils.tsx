@@ -13,9 +13,9 @@ export const getCategoryDisplayName = (category: QuestionCategoryEnum) => {
 
 export const getCategoryDescription = (category: QuestionCategoryEnum) => {
   switch (category) {
-    case QuestionCategoryEnum.Connection:
-      return "Conozcamos la perspectiva que dejamos en los demas y las suposiciones que hacemos sobre otros.";
     case QuestionCategoryEnum.Perception:
+      return "Conozcamos la perspectiva que dejamos en los demas y las suposiciones que hacemos sobre otros.";
+    case QuestionCategoryEnum.Connection:
       return "Preguntas para conectar de manera profunda con el otro.";
     case QuestionCategoryEnum.Reflection:
       return "Reflexionemos sobre la experiencia que acabamos de vivir.";
